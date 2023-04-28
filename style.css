@@ -1,0 +1,24 @@
+.sketchbox {
+    display: flex;
+    max-width: 432px;
+    flex-wrap: wrap;
+}
+
+.pixel {
+    flex: 1;
+    min-width: 25px;
+    min-height: 25px;
+    background: lightblue;
+    border: 1px solid black;
+}
+
+.main-body {
+    display:flex;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.pixel:hover {
+    background-color: lightpink;
+}
