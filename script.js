@@ -2,14 +2,23 @@ const container = document.querySelector('.sketchbox');
 
 const btn = document.querySelector('.pixels');
 
+const colorButton = document.querySelector('.colorSet');
+
 const maxSize = 432;
 
-btn.addEventListener('click', function (e) {
+
+
+btn.addEventListener('click', function(e) {
     let i = prompt("Set grid size: ");
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
     grid(i);
+});
+
+colorButton.addEventListener('click', function() {
+    color =  prompt("Select color: ");
+    return;
 });
 
 function grid(i) {
@@ -21,7 +30,7 @@ function grid(i) {
         content.style.width = `${pixelWidth}px`;
         content.style.height = `${pixelWidth}px`
         content.addEventListener('mouseover', function(e) {
-            e.target.style.background = 'blue';
+            e.target.style.background = color;
         });
     }
 }
