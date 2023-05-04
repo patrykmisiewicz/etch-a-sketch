@@ -1,14 +1,8 @@
 .sketchbox {
     display: flex;
-    max-width: 432px;
+    max-width: 600px;
+    max-height: 600px;
     flex-wrap: wrap;
-}
-
-.pixel {
-    min-width: 25px;
-    min-height: 25px;
-    background: lightblue;
-    border: 1px solid black;
 }
 
 .main-body {
@@ -16,4 +10,48 @@
     margin-top: 100px;
     justify-content: center;
     align-items: center;
+}
+
+button {
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+div {
+
+    justify-content: center;
+    align-items: center;
+}
+
+.gridSize,
+.colors {
+    display:flex;
+    justify-content: center;
+}
+
+.colorRed {
+    background-color: #bd1d1dbe;
+}
+
+.colorGreen {
+    background-color: #1dbd38b0;
+}
+
+.colorBlue {
+    background-color: #0025cab4;
+}
+
+.gridSize {
+    margin: 35px;
+}
+
+.colors button {
+    flex: 1;
+    max-width: 150px;
+    margin: 5px;
+}
+
+button.colorCustom {
+    max-width: 200px;
 }
