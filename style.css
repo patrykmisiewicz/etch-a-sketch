@@ -5,7 +5,6 @@
 }
 
 .pixel {
-    flex: 1;
     min-width: 25px;
     min-height: 25px;
     background: lightblue;
