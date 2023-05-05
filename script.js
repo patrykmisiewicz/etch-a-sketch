@@ -19,7 +19,13 @@ const maxSize = 600;
 
 btn.addEventListener('click', function(e) {
     let i = prompt("Set grid size: ");
+    if (i > 100) {
+      alert("Maxium size is 100!");
+    } else if (1 <= i) {
     grid(i);
+  } else {
+    alert("You need to enter a number!")
+  }
 });
 
 // RED color button
