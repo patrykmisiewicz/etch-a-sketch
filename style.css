@@ -1,3 +1,8 @@
+body {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 15%, rgba(255,241,198,1) 75%);
+}
+
 .sketchbox {
     display: flex;
     max-width: 600px;
@@ -7,7 +12,7 @@
 
 .main-body {
     display:flex;
-    margin-top: 100px;
+    margin-top: 40px;
     justify-content: center;
     align-items: center;
 }
@@ -24,7 +29,7 @@ div {
     align-items: center;
 }
 
-.gridSize,
+.tools,
 .colors {
     display:flex;
     justify-content: center;
@@ -42,8 +47,15 @@ div {
     background-color: #0025cab4;
 }
 
-.gridSize {
+.tools {
     margin: 35px;
+    gap: 10px;
+}
+
+.tools button,
+button.colorCustom {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(148,187,233,1) 100%);
 }
 
 .colors button {
@@ -54,4 +66,16 @@ div {
 
 button.colorCustom {
     max-width: 200px;
+}
+
+.header {
+    margin-top: 15px;
+    display:flex;
+    justify-content: center;
+}
+
+footer {
+    display:flex;
+    justify-content: center;
+    margin-top: 100px;
 }
