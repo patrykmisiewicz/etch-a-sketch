@@ -8,6 +8,7 @@ const colorRed = document.querySelector('.colorRed');
 const colorGreen = document.querySelector('.colorGreen');
 const colorBlue = document.querySelector('.colorBlue');
 const colorCustom = document.querySelector('.colorCustom');
+const colorRandom = document.querySelector('.random');
 
 const clear = document.querySelector('.clear');
 
@@ -22,7 +23,7 @@ btn.addEventListener('click', function(e) {
     if (i > 100) {
       alert("Maxium size is 100!");
     } else if (1 <= i) {
-    grid(i);
+    makeGrid(i);
   } else {
     alert("You need to enter a number!")
   }
@@ -52,13 +53,28 @@ colorBlue.addEventListener('click', function() {
 // CUSTOM color button
 
 colorCustom.addEventListener('click', function() {
-    color =  prompt("Set color: ");
-    color = color.toLowerCase();
-    return;
+  color =  prompt("Set color: ");
+  color = color.toLowerCase();
+  return;
+});
+
+// RAINBOW color button
+
+function getRandomColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  const a = Math.random().toFixed(2); // set the alpha value between 0 and 1 with 2 decimal places
+  return `rgba(${r}, ${g}, ${b}, ${a})`;
+};
+
+colorRandom.addEventListener('click', function () {
+  color = 'random';
 });
 
 
-function grid(i) {
+
+function makeGrid(i) {
     container.innerHTML = "";
   
     const pixelWidth = Math.floor((maxSize - (i-1)*2)/i);
@@ -79,7 +95,11 @@ function grid(i) {
         row.appendChild(pixel);
   
         pixel.addEventListener('mouseover', function(e) {
-          e.target.style.background = color;
+          if (color === 'random') {
+            e.target.style.background = getRandomColor();
+          } else {
+            e.target.style.background = color;
+          }
         });
 
         clear.addEventListener('click', function() { // Clear function
@@ -89,7 +109,7 @@ function grid(i) {
       }
     }
     container.style.height = `${rowHeight}px`;
-  }
+  };
   
 
-grid(16)
+makeGrid(16)

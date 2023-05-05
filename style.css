@@ -68,6 +68,12 @@ button.colorCustom {
     max-width: 200px;
 }
 
+.random {
+    background: radial-gradient(circle, violet, indigo, blue, green, yellow, orange, red);
+
+        color: white;
+}
+
 .header {
     margin-top: 15px;
     display:flex;
